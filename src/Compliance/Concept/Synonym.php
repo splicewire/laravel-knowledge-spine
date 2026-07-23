@@ -17,5 +17,7 @@ class Synonym extends Data
         public SynonymType $type = SynonymType::Generic,
         public SynonymSource $source = SynonymSource::Authority,
         public float $confidence = 1.0,
+        public string $provider = 'system',
+        public string $alias = 'default',
     ) {}
 }

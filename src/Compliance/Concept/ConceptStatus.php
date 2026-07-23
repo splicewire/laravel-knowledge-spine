@@ -3,8 +3,8 @@
 namespace Splicewire\KnowledgeSpineData\Compliance\Concept;
 
 use Carbon\CarbonImmutable;
-use Splicewire\KnowledgeSpineData\Compliance\Concerns\HasBitemporalValidity;
 use Spatie\LaravelData\Data;
+use Splicewire\KnowledgeSpineData\Compliance\Concerns\HasBitemporalValidity;
 
 /**
  * An authority-sourced, bitemporal regulatory status for a concept in a
@@ -37,5 +37,7 @@ class ConceptStatus extends Data
         public ?string $changeNote = null,
         public StatusState $status = StatusState::Active,
         public ?string $statusId = null,
+        public string $provider = 'system',
+        public string $alias = 'default',
     ) {}
 }

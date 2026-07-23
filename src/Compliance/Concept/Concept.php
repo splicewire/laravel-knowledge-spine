@@ -33,5 +33,13 @@ class Concept extends Data
         /** @var string[] */
         #[Description('Taxonomy tags, e.g. "peptide/glp-1-agonist".')]
         public array $taxonomyTags = [],
+
+        #[Description('The provider namespace this concept was asserted under. Governed keys are addressed `{provider}:{alias}`; first-party canon is `system:default`.')]
+        #[Example('system')]
+        public string $provider = 'system',
+
+        #[Description('The subscriber-side instance alias within the provider.')]
+        #[Example('default')]
+        public string $alias = 'default',
     ) {}
 }
