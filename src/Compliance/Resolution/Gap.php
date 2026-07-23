@@ -12,7 +12,7 @@ use Spatie\LaravelData\Data;
 class Gap extends Data
 {
     public function __construct(
-        public string $fragmentId,
+        public string $ruleKey,
         public string $requirementKey,
         public string $source,
     ) {}

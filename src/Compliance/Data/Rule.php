@@ -23,9 +23,9 @@ class Rule extends Data
     use HasBitemporalValidity;
 
     public function __construct(
-        #[Description('Domain-prefixed stable identifier, e.g. RULE-0042.')]
+        #[Description('The rule\'s governed citation key — a domain-prefixed stable identifier, e.g. RULE-0042, under a declared `rule` namespace. Never a fragment UUID.')]
         #[Example('RULE-0042')]
-        public string $fragmentId,
+        public string $ruleKey,
 
         #[Description('Corpus layer this rule is authored in.')]
         public RuleLayer $layer,
@@ -61,7 +61,7 @@ class Rule extends Data
         #[Description('Set only if we retroactively learned this knowledge-time fact was wrong.')]
         public ?CarbonImmutable $knownUntil = null,
 
-        #[Description('fragment_id this rule supersedes, dropped from the candidate set before resolution.')]
+        #[Description('rule_key this rule supersedes, dropped from the candidate set before resolution.')]
         public ?string $supersedes = null,
 
         #[Description('Why it changed — the human-facing change explanation.')]

@@ -12,7 +12,7 @@ use Spatie\LaravelData\Data;
 class Provenance extends Data
 {
     public function __construct(
-        public string $fragmentId,
+        public string $ruleKey,
         public string $source,
         public int $precedenceTier,
     ) {}
