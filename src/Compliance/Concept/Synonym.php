@@ -3,6 +3,7 @@
 namespace Splicewire\KnowledgeSpineData\Compliance\Concept;
 
 use Spatie\LaravelData\Data;
+use Splicewire\KnowledgeSpineData\Compliance\SourceRef;
 
 /**
  * A surface string that resolves to a concept, with the trust its source earns.
@@ -17,7 +18,6 @@ class Synonym extends Data
         public SynonymType $type = SynonymType::Generic,
         public SynonymSource $source = SynonymSource::Authority,
         public float $confidence = 1.0,
-        public string $provider = 'system',
-        public string $alias = 'default',
+        public SourceRef $sourceRef = new SourceRef,
     ) {}
 }

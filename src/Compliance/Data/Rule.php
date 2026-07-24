@@ -9,6 +9,7 @@ use Spatie\LaravelData\Data;
 use Splicewire\KnowledgeSpineData\Compliance\Concerns\HasBitemporalValidity;
 use Splicewire\KnowledgeSpineData\Compliance\Enums\RuleLayer;
 use Splicewire\KnowledgeSpineData\Compliance\Enums\RuleStatus;
+use Splicewire\KnowledgeSpineData\Compliance\SourceRef;
 
 /**
  * An atomic rule fragment — the authored unit of the layered corpus.
@@ -69,13 +70,8 @@ class Rule extends Data
 
         public RuleStatus $status = RuleStatus::Active,
 
-        #[Description('The provider namespace this rule was asserted under. Governed keys are addressed `{provider}:{alias}` — two providers asserting the same bare rule_key are distinct by construction. First-party canon is `system`.')]
-        #[Example('system')]
-        public string $provider = 'system',
-
-        #[Description('The subscriber-side instance alias within the provider. The final deterministic tiebreak in the precedence total order. First-party canon is `default`.')]
-        #[Example('default')]
-        public string $alias = 'default',
+        #[Description('The governed-key source namespace this rule was asserted under. Governed keys are addressed `{provider}:{alias}` — two providers asserting the same bare rule_key are distinct by construction; the alias is the final deterministic tiebreak in the precedence total order. First-party canon is `system:default`.')]
+        public SourceRef $sourceRef = new SourceRef,
 
         #[Description('The declared source tier of the conduit that projected this rule — higher wins across sources. The first precedence key, above the rule\'s own precedence_tier. Defaults to 0 (the first-party baseline).')]
         public int $tierRank = 0,

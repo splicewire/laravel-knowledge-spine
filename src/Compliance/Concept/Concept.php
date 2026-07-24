@@ -5,6 +5,7 @@ namespace Splicewire\KnowledgeSpineData\Compliance\Concept;
 use Schemastud\DataSchemas\Attributes\Description;
 use Schemastud\DataSchemas\Attributes\Example;
 use Spatie\LaravelData\Data;
+use Splicewire\KnowledgeSpineData\Compliance\SourceRef;
 
 /**
  * A canonical entity a corpus refers to — kind-agnostic. The densest case is a
@@ -34,12 +35,7 @@ class Concept extends Data
         #[Description('Taxonomy tags, e.g. "peptide/glp-1-agonist".')]
         public array $taxonomyTags = [],
 
-        #[Description('The provider namespace this concept was asserted under. Governed keys are addressed `{provider}:{alias}`; first-party canon is `system:default`.')]
-        #[Example('system')]
-        public string $provider = 'system',
-
-        #[Description('The subscriber-side instance alias within the provider.')]
-        #[Example('default')]
-        public string $alias = 'default',
+        #[Description('The governed-key source namespace this concept was asserted under. Governed keys are addressed `{provider}:{alias}`; first-party canon is `system:default`.')]
+        public SourceRef $sourceRef = new SourceRef,
     ) {}
 }
