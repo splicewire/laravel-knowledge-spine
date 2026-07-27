@@ -1,9 +1,9 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Compliance\Change;
+namespace Splicewire\Knowledge\Compliance\Change;
 
-use Splicewire\KnowledgeSpineData\Compliance\Data\Rule;
 use Spatie\LaravelData\Data;
+use Splicewire\Knowledge\Compliance\Data\Rule;
 
 /**
  * A transition between two states of the corpus: an old rule superseded by a

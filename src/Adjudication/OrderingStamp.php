@@ -1,13 +1,13 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Adjudication;
+namespace Splicewire\Knowledge\Adjudication;
 
 use Carbon\CarbonImmutable;
 use InvalidArgumentException;
-use Splicewire\KnowledgeSpineData\Knowledge\Instant;
-use Splicewire\KnowledgeSpineData\Knowledge\OrderingPoint;
-use Splicewire\KnowledgeSpineData\Knowledge\Ordinal;
 use Spatie\LaravelData\Data;
+use Splicewire\Knowledge\Knowledge\Instant;
+use Splicewire\Knowledge\Knowledge\Ordinal;
+use Splicewire\Knowledge\Knowledge\OrderingPoint;
 
 /**
  * A serializable projection of an {@see OrderingPoint} — `(kind, value)` — so a

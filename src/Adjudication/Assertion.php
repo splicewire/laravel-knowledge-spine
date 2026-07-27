@@ -1,9 +1,9 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Adjudication;
+namespace Splicewire\Knowledge\Adjudication;
 
-use Splicewire\KnowledgeSpineData\Contracts\EvaluationSubject;
 use Spatie\LaravelData\Data;
+use Splicewire\Knowledge\Contracts\EvaluationSubject;
 
 /**
  * An addressable claim: a single facet a subject asserts, lifted out of the

@@ -1,11 +1,11 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Compliance\Concept;
+namespace Splicewire\Knowledge\Compliance\Concept;
 
 use Carbon\CarbonImmutable;
 use Spatie\LaravelData\Data;
-use Splicewire\KnowledgeSpineData\Compliance\Concerns\HasBitemporalValidity;
-use Splicewire\KnowledgeSpineData\Compliance\SourceRef;
+use Splicewire\Knowledge\Compliance\Concerns\HasBitemporalValidity;
+use Splicewire\Knowledge\Compliance\SourceRef;
 
 /**
  * An authority-sourced, bitemporal regulatory status for a concept in a

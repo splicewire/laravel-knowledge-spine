@@ -1,6 +1,6 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Compliance\Change;
+namespace Splicewire\Knowledge\Compliance\Change;
 
 /**
  * When a change bites — the temporal axis orthogonal to {@see ChangeSubstance}.

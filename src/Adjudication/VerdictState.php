@@ -1,8 +1,8 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Adjudication;
+namespace Splicewire\Knowledge\Adjudication;
 
-use Splicewire\KnowledgeSpineData\Predicate\Ternary;
+use Splicewire\Knowledge\Predicate\Ternary;
 
 /**
  * The first-class projection of {@see Ternary} as a verdict outcome.

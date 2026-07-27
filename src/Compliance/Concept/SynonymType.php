@@ -1,6 +1,6 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Compliance\Concept;
+namespace Splicewire\Knowledge\Compliance\Concept;
 
 /**
  * The kind of surface string that maps to a canonical concept. MARKETING and

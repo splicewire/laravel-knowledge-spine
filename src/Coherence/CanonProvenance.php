@@ -1,6 +1,6 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Coherence;
+namespace Splicewire\Knowledge\Coherence;
 
 /**
  * The trust rank of an established fact, coherence-local on purpose.

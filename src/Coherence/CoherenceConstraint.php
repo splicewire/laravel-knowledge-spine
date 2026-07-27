@@ -1,6 +1,6 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Coherence;
+namespace Splicewire\Knowledge\Coherence;
 
 use Spatie\LaravelData\Data;
 

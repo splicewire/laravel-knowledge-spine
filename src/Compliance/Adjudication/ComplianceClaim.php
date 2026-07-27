@@ -1,6 +1,6 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Compliance\Adjudication;
+namespace Splicewire\Knowledge\Compliance\Adjudication;
 
 use Spatie\LaravelData\Data;
 
@@ -11,7 +11,7 @@ use Spatie\LaravelData\Data;
  * comparison `operator`.
  *
  * This is the compliance specialization of the kernel {@see
- * \Splicewire\KnowledgeSpineData\Adjudication\Assertion}: the kernel `Assertion`
+ * \Splicewire\Knowledge\Adjudication\Assertion}: the kernel `Assertion`
  * enumerates anonymous facets; a `ComplianceClaim` additionally names *which
  * resolved requirement it is checked against* and *how*. The vocabulary stays
  * engine-level — `dimension` is a free requirement-key string, `operator` is a

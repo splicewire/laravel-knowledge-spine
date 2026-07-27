@@ -1,9 +1,9 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Compliance\Concept;
+namespace Splicewire\Knowledge\Compliance\Concept;
 
 use Spatie\LaravelData\Data;
-use Splicewire\KnowledgeSpineData\Compliance\SourceRef;
+use Splicewire\Knowledge\Compliance\SourceRef;
 
 /**
  * A surface string that resolves to a concept, with the trust its source earns.

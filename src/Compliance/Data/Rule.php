@@ -1,15 +1,15 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Compliance\Data;
+namespace Splicewire\Knowledge\Compliance\Data;
 
 use Carbon\CarbonImmutable;
 use Schemastud\DataSchemas\Attributes\Description;
 use Schemastud\DataSchemas\Attributes\Example;
 use Spatie\LaravelData\Data;
-use Splicewire\KnowledgeSpineData\Compliance\Concerns\HasBitemporalValidity;
-use Splicewire\KnowledgeSpineData\Compliance\Enums\RuleLayer;
-use Splicewire\KnowledgeSpineData\Compliance\Enums\RuleStatus;
-use Splicewire\KnowledgeSpineData\Compliance\SourceRef;
+use Splicewire\Knowledge\Compliance\Concerns\HasBitemporalValidity;
+use Splicewire\Knowledge\Compliance\Enums\RuleLayer;
+use Splicewire\Knowledge\Compliance\Enums\RuleStatus;
+use Splicewire\Knowledge\Compliance\SourceRef;
 
 /**
  * An atomic rule fragment — the authored unit of the layered corpus.

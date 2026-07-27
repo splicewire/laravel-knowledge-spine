@@ -1,6 +1,6 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Adjudication;
+namespace Splicewire\Knowledge\Adjudication;
 
 /**
  * A stable content hash over an arbitrary value, canonicalized so the same

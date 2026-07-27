@@ -1,9 +1,9 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Adjudication;
+namespace Splicewire\Knowledge\Adjudication;
 
-use Splicewire\KnowledgeSpineData\Predicate\Ternary;
 use Spatie\LaravelData\Data;
+use Splicewire\Knowledge\Predicate\Ternary;
 
 /**
  * The first-class output the resolver used to throw away: a three-valued verdict

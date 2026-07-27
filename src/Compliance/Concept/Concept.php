@@ -1,11 +1,11 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Compliance\Concept;
+namespace Splicewire\Knowledge\Compliance\Concept;
 
 use Schemastud\DataSchemas\Attributes\Description;
 use Schemastud\DataSchemas\Attributes\Example;
 use Spatie\LaravelData\Data;
-use Splicewire\KnowledgeSpineData\Compliance\SourceRef;
+use Splicewire\Knowledge\Compliance\SourceRef;
 
 /**
  * A canonical entity a corpus refers to — kind-agnostic. The densest case is a

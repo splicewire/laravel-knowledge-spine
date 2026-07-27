@@ -1,10 +1,10 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Adjudication;
+namespace Splicewire\Knowledge\Adjudication;
 
-use Splicewire\KnowledgeSpineData\Knowledge\OrderingPoint;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
 use Spatie\LaravelData\Data;
+use Splicewire\Knowledge\Knowledge\OrderingPoint;
 
 /**
  * An immutable, content-addressed audit point — the domain-agnostic

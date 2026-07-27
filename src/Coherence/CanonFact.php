@@ -1,10 +1,10 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Coherence;
+namespace Splicewire\Knowledge\Coherence;
 
-use Splicewire\KnowledgeSpineData\Coherence\Concerns\HasOrderingWindow;
-use Splicewire\KnowledgeSpineData\Knowledge\OrderingPoint;
 use Spatie\LaravelData\Data;
+use Splicewire\Knowledge\Coherence\Concerns\HasOrderingWindow;
+use Splicewire\Knowledge\Knowledge\OrderingPoint;
 
 /**
  * An established fact about a concept on a dimension, holding over an ordering

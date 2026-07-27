@@ -1,6 +1,6 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Compliance\Concerns;
+namespace Splicewire\Knowledge\Compliance\Concerns;
 
 use Carbon\CarbonImmutable;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Compliance\Enums;
+namespace Splicewire\Knowledge\Compliance\Enums;
 
 /**
  * The corpus layer a rule is authored in. A subject inherits the union of every

@@ -1,6 +1,6 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Compliance;
+namespace Splicewire\Knowledge\Compliance;
 
 use Spatie\LaravelData\Data;
 

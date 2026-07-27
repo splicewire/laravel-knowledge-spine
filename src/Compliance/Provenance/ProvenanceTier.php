@@ -1,6 +1,6 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Compliance\Provenance;
+namespace Splicewire\Knowledge\Compliance\Provenance;
 
 /**
  * The trust tier of a subject facet — how the value was obtained. The engine

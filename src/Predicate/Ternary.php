@@ -1,6 +1,6 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Predicate;
+namespace Splicewire\Knowledge\Predicate;
 
 /**
  * Kleene three-valued logic.

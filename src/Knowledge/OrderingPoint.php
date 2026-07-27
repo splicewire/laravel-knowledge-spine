@@ -1,6 +1,6 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Knowledge;
+namespace Splicewire\Knowledge\Knowledge;
 
 /**
  * A point on *some* ordering axis along which knowledge accrues.

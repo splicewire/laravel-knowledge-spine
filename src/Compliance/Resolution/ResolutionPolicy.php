@@ -1,6 +1,6 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Compliance\Resolution;
+namespace Splicewire\Knowledge\Compliance\Resolution;
 
 /**
  * How a conflict on a single requirement_key is settled when more than one

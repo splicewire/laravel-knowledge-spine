@@ -1,9 +1,9 @@
 <?php
 
-namespace Splicewire\KnowledgeSpineData\Compliance\Resolution;
+namespace Splicewire\Knowledge\Compliance\Resolution;
 
-use Splicewire\KnowledgeSpineData\Compliance\Provenance\ProvenanceTier;
 use Spatie\LaravelData\Data;
+use Splicewire\Knowledge\Compliance\Provenance\ProvenanceTier;
 
 /**
  * The settled value for one requirement_key, plus the provenance that produced
