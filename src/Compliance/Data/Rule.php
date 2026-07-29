@@ -78,5 +78,9 @@ class Rule extends Data
 
         #[Description('The per-instance override knob for named exceptions — breaks ties within a tier_rank. Defaults to 0.')]
         public int $explicitPriority = 0,
+
+        #[Description('The concept this rule governs, materialized at extraction time as `{provider}:{familyOf(rule_key)}` — the governance edge that answers "which concept does this rule speak for". Orthogonal to `applies_to` (which gates eligibility): a rule governs one concept but may apply to many subjects. Null when the rule\'s key has no derivable family.')]
+        #[Example('soc2:CC5')]
+        public ?string $governsConceptId = null,
     ) {}
 }
