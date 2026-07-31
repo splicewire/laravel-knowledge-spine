@@ -21,6 +21,16 @@
         }
     },
     "extra": {
+        "package-topology": {
+            "because": "the spine keeps its noun VOs; it must never reach up into the engine process subtrees",
+            "sourceNeverReferences": [
+                "Splicewire\\Knowledge\\Adjudicating\\",
+                "Splicewire\\Knowledge\\Cohering\\",
+                "Splicewire\\Knowledge\\Complying\\",
+                "Splicewire\\Knowledge\\Knowing\\",
+                "Splicewire\\Knowledge\\Evaluating\\"
+            ]
+        },
         "branch-alias": {
             "dev-main": "1.0.x-dev"
         }
