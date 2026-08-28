@@ -2,19 +2,18 @@
 
 namespace Splicewire\Knowledge\Determination\Concerns;
 
-use Splicewire\Knowledge\Compliance\Concerns\HasBitemporalValidity as ComplianceHasBitemporalValidity;
-
-/**
- * Determination-namespace name for the bitemporal validity trait.
+/*
+ * Determination <- Compliance expand seam (T1). Deleted in T7 (contract).
  *
- * A trait cannot be aliased — class_alias() covers classes, interfaces and enums only —
- * so the stub seam its siblings use cannot reach this one. It is wrapped instead: the
- * behaviour still lives in the Compliance-namespace trait, and this is the new name for
- * it, so a consumer can migrate before the file moves.
+ * Originally a wrapper trait (`trait New { use Old; }`), on the assumption that
+ * class_alias() cannot alias a trait. B2 disproved that: class_alias() DOES alias a
+ * trait on PHP 8.4, verified under real PSR-4 autoloading. The wrapper was also less
+ * faithful -- `class_uses()` on a consumer reports the WRAPPER's name, not the original
+ * (measured: returns `Wrap`, not `Orig`) -- so anything reflecting over traits saw a
+ * different answer through the new name than through the old.
  *
- * In T7 (contract) the bodies move here and the Compliance-namespace trait is deleted.
+ * Now identical in form to its 26 siblings, which removes the special case rather than
+ * documenting it.
  */
-trait HasBitemporalValidity
-{
-    use ComplianceHasBitemporalValidity;
-}
+
+\class_alias(\Splicewire\Knowledge\Compliance\Concerns\HasBitemporalValidity::class, __NAMESPACE__.'\\HasBitemporalValidity');
