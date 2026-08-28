@@ -16,4 +16,4 @@ namespace Splicewire\Knowledge\Determination\Change;
  * it, satisfying PSR-4 without duplicating the declaration.
  */
 
-\class_alias(\Splicewire\Knowledge\Compliance\Change\TemporalDirection::class, __NAMESPACE__.'\\TemporalDirection');
+\class_alias('Splicewire\\Knowledge\\Compliance\\Change\\TemporalDirection', 'Splicewire\\Knowledge\\Determination\\Change\\TemporalDirection');

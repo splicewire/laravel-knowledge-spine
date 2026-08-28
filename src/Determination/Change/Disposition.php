@@ -16,4 +16,4 @@ namespace Splicewire\Knowledge\Determination\Change;
  * it, satisfying PSR-4 without duplicating the declaration.
  */
 
-\class_alias(\Splicewire\Knowledge\Compliance\Change\Disposition::class, __NAMESPACE__.'\\Disposition');
+\class_alias('Splicewire\\Knowledge\\Compliance\\Change\\Disposition', 'Splicewire\\Knowledge\\Determination\\Change\\Disposition');

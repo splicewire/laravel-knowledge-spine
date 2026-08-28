@@ -16,4 +16,4 @@ namespace Splicewire\Knowledge\Determination\Concept;
  * it, satisfying PSR-4 without duplicating the declaration.
  */
 
-\class_alias(\Splicewire\Knowledge\Compliance\Concept\SynonymType::class, __NAMESPACE__.'\\SynonymType');
+\class_alias('Splicewire\\Knowledge\\Compliance\\Concept\\SynonymType', 'Splicewire\\Knowledge\\Determination\\Concept\\SynonymType');

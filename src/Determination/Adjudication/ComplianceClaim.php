@@ -16,4 +16,4 @@ namespace Splicewire\Knowledge\Determination\Adjudication;
  * it, satisfying PSR-4 without duplicating the declaration.
  */
 
-\class_alias(\Splicewire\Knowledge\Compliance\Adjudication\ComplianceClaim::class, __NAMESPACE__.'\\ComplianceClaim');
+\class_alias('Splicewire\\Knowledge\\Compliance\\Adjudication\\ComplianceClaim', 'Splicewire\\Knowledge\\Determination\\Adjudication\\ComplianceClaim');

@@ -16,4 +16,4 @@ namespace Splicewire\Knowledge\Determination;
  * it, satisfying PSR-4 without duplicating the declaration.
  */
 
-\class_alias(\Splicewire\Knowledge\Compliance\SourceRef::class, __NAMESPACE__.'\\SourceRef');
+\class_alias('Splicewire\\Knowledge\\Compliance\\SourceRef', 'Splicewire\\Knowledge\\Determination\\SourceRef');

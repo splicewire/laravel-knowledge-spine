@@ -16,4 +16,4 @@ namespace Splicewire\Knowledge\Determination\Concerns;
  * documenting it.
  */
 
-\class_alias(\Splicewire\Knowledge\Compliance\Concerns\HasBitemporalValidity::class, __NAMESPACE__.'\\HasBitemporalValidity');
+\class_alias('Splicewire\\Knowledge\\Compliance\\Concerns\\HasBitemporalValidity', 'Splicewire\\Knowledge\\Determination\\Concerns\\HasBitemporalValidity');

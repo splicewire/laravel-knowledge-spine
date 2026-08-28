@@ -16,4 +16,4 @@ namespace Splicewire\Knowledge\Determination\Enums;
  * it, satisfying PSR-4 without duplicating the declaration.
  */
 
-\class_alias(\Splicewire\Knowledge\Compliance\Enums\RuleStatus::class, __NAMESPACE__.'\\RuleStatus');
+\class_alias('Splicewire\\Knowledge\\Compliance\\Enums\\RuleStatus', 'Splicewire\\Knowledge\\Determination\\Enums\\RuleStatus');

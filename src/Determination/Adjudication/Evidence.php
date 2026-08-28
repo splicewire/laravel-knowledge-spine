@@ -16,4 +16,4 @@ namespace Splicewire\Knowledge\Determination\Adjudication;
  * it, satisfying PSR-4 without duplicating the declaration.
  */
 
-\class_alias(\Splicewire\Knowledge\Compliance\Adjudication\Evidence::class, __NAMESPACE__.'\\Evidence');
+\class_alias('Splicewire\\Knowledge\\Compliance\\Adjudication\\Evidence', 'Splicewire\\Knowledge\\Determination\\Adjudication\\Evidence');

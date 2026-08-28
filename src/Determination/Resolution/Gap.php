@@ -16,4 +16,4 @@ namespace Splicewire\Knowledge\Determination\Resolution;
  * it, satisfying PSR-4 without duplicating the declaration.
  */
 
-\class_alias(\Splicewire\Knowledge\Compliance\Resolution\Gap::class, __NAMESPACE__.'\\Gap');
+\class_alias('Splicewire\\Knowledge\\Compliance\\Resolution\\Gap', 'Splicewire\\Knowledge\\Determination\\Resolution\\Gap');

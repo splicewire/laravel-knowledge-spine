@@ -16,4 +16,4 @@ namespace Splicewire\Knowledge\Determination\Resolution;
  * it, satisfying PSR-4 without duplicating the declaration.
  */
 
-\class_alias(\Splicewire\Knowledge\Compliance\Resolution\Provenance::class, __NAMESPACE__.'\\Provenance');
+\class_alias('Splicewire\\Knowledge\\Compliance\\Resolution\\Provenance', 'Splicewire\\Knowledge\\Determination\\Resolution\\Provenance');

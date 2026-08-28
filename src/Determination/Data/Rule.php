@@ -16,4 +16,4 @@ namespace Splicewire\Knowledge\Determination\Data;
  * it, satisfying PSR-4 without duplicating the declaration.
  */
 
-\class_alias(\Splicewire\Knowledge\Compliance\Data\Rule::class, __NAMESPACE__.'\\Rule');
+\class_alias('Splicewire\\Knowledge\\Compliance\\Data\\Rule', 'Splicewire\\Knowledge\\Determination\\Data\\Rule');

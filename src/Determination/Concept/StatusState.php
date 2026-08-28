@@ -16,4 +16,4 @@ namespace Splicewire\Knowledge\Determination\Concept;
  * it, satisfying PSR-4 without duplicating the declaration.
  */
 
-\class_alias(\Splicewire\Knowledge\Compliance\Concept\StatusState::class, __NAMESPACE__.'\\StatusState');
+\class_alias('Splicewire\\Knowledge\\Compliance\\Concept\\StatusState', 'Splicewire\\Knowledge\\Determination\\Concept\\StatusState');

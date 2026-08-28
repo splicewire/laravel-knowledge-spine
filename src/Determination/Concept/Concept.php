@@ -16,4 +16,4 @@ namespace Splicewire\Knowledge\Determination\Concept;
  * it, satisfying PSR-4 without duplicating the declaration.
  */
 
-\class_alias(\Splicewire\Knowledge\Compliance\Concept\Concept::class, __NAMESPACE__.'\\Concept');
+\class_alias('Splicewire\\Knowledge\\Compliance\\Concept\\Concept', 'Splicewire\\Knowledge\\Determination\\Concept\\Concept');

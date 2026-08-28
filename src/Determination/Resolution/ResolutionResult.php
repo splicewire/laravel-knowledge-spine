@@ -16,4 +16,4 @@ namespace Splicewire\Knowledge\Determination\Resolution;
  * it, satisfying PSR-4 without duplicating the declaration.
  */
 
-\class_alias(\Splicewire\Knowledge\Compliance\Resolution\ResolutionResult::class, __NAMESPACE__.'\\ResolutionResult');
+\class_alias('Splicewire\\Knowledge\\Compliance\\Resolution\\ResolutionResult', 'Splicewire\\Knowledge\\Determination\\Resolution\\ResolutionResult');
