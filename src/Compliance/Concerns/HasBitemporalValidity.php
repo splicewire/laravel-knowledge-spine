@@ -2,44 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance\Concerns;
 
-use Carbon\CarbonImmutable;
-
-/**
- * The two-axis temporal check shared by anything dated both in the world and in
- * the corpus's knowledge — a rule fragment, a concept's regulatory status.
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
  *
- * Effective time answers "was it in force in the world then"; knowledge time
- * answers "did we know it then, and have we since learned it was wrong". The
- * using class must expose `?CarbonImmutable` properties `effectiveStart`,
- * `effectiveEnd`, `ingestedAt`, `knownUntil`. See schema §4.
+ * The real declaration now lives at src/Determination/Concerns/HasBitemporalValidity.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
+ *
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-trait HasBitemporalValidity
-{
-    /** Is this record's knowledge live as of the given knowledge time? */
-    public function knownAsOf(CarbonImmutable $asOfKnowledge): bool
-    {
-        if ($this->ingestedAt !== null && $this->ingestedAt->greaterThan($asOfKnowledge)) {
-            return false; // not yet learned at that point
-        }
 
-        if ($this->knownUntil !== null && $this->knownUntil->lessThanOrEqualTo($asOfKnowledge)) {
-            return false; // record was retracted/corrected by then
-        }
-
-        return true;
-    }
-
-    /** Was this in force in the world at the given effective time? */
-    public function effectiveAsOf(CarbonImmutable $asOfEffective): bool
-    {
-        if ($this->effectiveStart !== null && $this->effectiveStart->greaterThan($asOfEffective)) {
-            return false;
-        }
-
-        if ($this->effectiveEnd !== null && $this->effectiveEnd->lessThanOrEqualTo($asOfEffective)) {
-            return false;
-        }
-
-        return true;
-    }
-}
+\class_alias('Splicewire\\Knowledge\\Determination\\Concerns\\HasBitemporalValidity', 'Splicewire\\Knowledge\\Compliance\\Concerns\\HasBitemporalValidity');

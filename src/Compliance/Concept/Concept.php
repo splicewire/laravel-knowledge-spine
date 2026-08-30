@@ -2,40 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance\Concept;
 
-use Schemastud\DataSchemas\Attributes\Description;
-use Schemastud\DataSchemas\Attributes\Example;
-use Spatie\LaravelData\Data;
-use Splicewire\Knowledge\Compliance\SourceRef;
-
-/**
- * A canonical entity a corpus refers to — kind-agnostic. The densest case is a
- * substance (UNII/CAS-anchored), but the same shape serves defined terms, MCCs,
- * cited statutes, jurisdictions. "Ingredient" is just `kind = 'substance'`; the
- * engine never says "ingredient". See approach-revision (Concept Anchor).
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
+ *
+ * The real declaration now lives at src/Determination/Concept/Concept.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
+ *
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-class Concept extends Data
-{
-    public function __construct(
-        #[Description('Stable internal id, never reused.')]
-        public string $conceptId,
 
-        #[Description('What sort of concept this is.')]
-        #[Example('substance')]
-        public string $kind,
-
-        #[Description('The preferred display name.')]
-        #[Example('Tirzepatide')]
-        public string $preferredName,
-
-        /** @var array<string, string> external authoritative ids: {cas, unii, drugbank, inchikey} */
-        #[Description('External authoritative identifiers — the anchor of truth. An entry with none is lower-confidence.')]
-        public array $identityRefs = [],
-
-        /** @var string[] */
-        #[Description('Taxonomy tags, e.g. "peptide/glp-1-agonist".')]
-        public array $taxonomyTags = [],
-
-        #[Description('The governed-key source namespace this concept was asserted under. Governed keys are addressed `{provider}:{alias}`; first-party canon is `system:default`.')]
-        public SourceRef $sourceRef = new SourceRef,
-    ) {}
-}
+\class_alias('Splicewire\\Knowledge\\Determination\\Concept\\Concept', 'Splicewire\\Knowledge\\Compliance\\Concept\\Concept');

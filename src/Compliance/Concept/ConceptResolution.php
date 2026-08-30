@@ -2,27 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance\Concept;
 
-use Spatie\LaravelData\Data;
-
-/**
- * The tagger's verdict on one raw string: which band it fell in, the accepted
- * concept (only when Accepted), and the candidates considered. A Review or
- * Unknown surfaces honestly rather than guessing — the difference between a
- * diligence tool and an evasion tool, at the catalog-item level.
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
+ *
+ * The real declaration now lives at src/Determination/Concept/ConceptResolution.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
+ *
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-class ConceptResolution extends Data
-{
-    public function __construct(
-        public string $raw,
-        public ResolutionBand $band,
-        public ?string $conceptId = null,
-        public float $confidence = 0.0,
-        /** @var ConceptMatch[] */
-        public array $candidates = [],
-    ) {}
 
-    public function isAccepted(): bool
-    {
-        return $this->band === ResolutionBand::Accepted;
-    }
-}
+\class_alias('Splicewire\\Knowledge\\Determination\\Concept\\ConceptResolution', 'Splicewire\\Knowledge\\Compliance\\Concept\\ConceptResolution');

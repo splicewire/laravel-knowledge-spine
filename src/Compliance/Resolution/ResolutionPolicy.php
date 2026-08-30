@@ -2,23 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance\Resolution;
 
-/**
- * How a conflict on a single requirement_key is settled when more than one
- * applicable rule asserts a value for it. Chosen per dimension, because the
- * right answer differs: licensing is precedence-driven (law wins), reserves
- * are conservative (take the strictest), registrations simply union. See §3.
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
+ *
+ * The real declaration now lives at src/Determination/Resolution/ResolutionPolicy.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
+ *
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-enum ResolutionPolicy: string
-{
-    /** Highest precedence_tier wins (e.g. statute over contract over guidance). */
-    case Precedence = 'precedence';
 
-    /** Most conservative numeric value wins — safety, not authority. */
-    case Max = 'max';
-
-    /** Least numeric value wins. */
-    case Min = 'min';
-
-    /** Non-conflicting; the resolved value is the set union of all asserted values. */
-    case Union = 'union';
-}
+\class_alias('Splicewire\\Knowledge\\Determination\\Resolution\\ResolutionPolicy', 'Splicewire\\Knowledge\\Compliance\\Resolution\\ResolutionPolicy');

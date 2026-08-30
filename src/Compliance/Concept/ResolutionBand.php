@@ -2,15 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance\Concept;
 
-/**
- * Confidence is control flow, not a stored number. A tagged string lands in one
- * of three bands: auto-accepted, routed to a human reviewer, or surfaced as
- * unknown — never silently guessed into a convenient category. The middle band
- * is the product's core interaction, not overhead. See ingredient ontology §5.
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
+ *
+ * The real declaration now lives at src/Determination/Concept/ResolutionBand.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
+ *
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-enum ResolutionBand: string
-{
-    case Accepted = 'accepted';
-    case Review = 'review';
-    case Unknown = 'unknown';
-}
+
+\class_alias('Splicewire\\Knowledge\\Determination\\Concept\\ResolutionBand', 'Splicewire\\Knowledge\\Compliance\\Concept\\ResolutionBand');

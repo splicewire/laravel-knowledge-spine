@@ -2,59 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance;
 
-use Spatie\LaravelData\Data;
-
-/**
- * The governed-key source namespace, `{provider}:{alias}`, as one value object.
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
  *
- * Every governed corpus row (concepts, synonyms, statuses, rules, evidence) is
- * addressed under a provider namespace and a subscriber-side instance alias:
- * two providers asserting the same bare governed key are distinct by
- * construction. First-party canon is `system:default`.
+ * The real declaration now lives at src/Determination/SourceRef.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
  *
- * This folds what used to travel as two loose `provider` + `alias` strings
- * across the spine DTOs into one addressable pair — a code-review followup on
- * the knowledge-source-ref-model feature (Primitive Obsession). The DB columns
- * stay flat; only the DTO/domain layer nests them here.
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-class SourceRef extends Data
-{
-    public function __construct(
-        public string $provider = 'system',
-        public string $alias = 'default',
-    ) {}
 
-    /** The provider-addressable governed-key namespace, `{provider}:{alias}`. */
-    public function key(): string
-    {
-        return $this->provider.':'.$this->alias;
-    }
-
-    /**
-     * Parse a `{provider}:{alias}` handle, splitting on the FIRST `:`. A bare
-     * `{provider}` (no `:`) leaves the alias at its `default`. Callers that need
-     * the "bare provider matches provider only" semantic branch on the presence
-     * of a `:` themselves (see the SourceProvider filter operator).
-     */
-    public static function parse(string $raw): self
-    {
-        if (! str_contains($raw, ':')) {
-            return new self($raw);
-        }
-
-        [$provider, $alias] = explode(':', $raw, 2);
-
-        return new self($provider, $alias === '' ? 'default' : $alias);
-    }
-
-    /** First-party canon: `system:default`. */
-    public static function system(): self
-    {
-        return new self('system', 'default');
-    }
-
-    public function is(SourceRef $other): bool
-    {
-        return $this->provider === $other->provider && $this->alias === $other->alias;
-    }
-}
+\class_alias('Splicewire\\Knowledge\\Determination\\SourceRef', 'Splicewire\\Knowledge\\Compliance\\SourceRef');

@@ -2,18 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance\Resolution;
 
-use Spatie\LaravelData\Data;
-
-/**
- * A rule whose applicability could not be determined because the profile is
- * missing a facet it tests. Gaps are first-class output — the "what we need to
- * assess you" checklist — never a silent pass. See schema §2 and §6.3.
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
+ *
+ * The real declaration now lives at src/Determination/Resolution/Gap.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
+ *
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-class Gap extends Data
-{
-    public function __construct(
-        public string $ruleKey,
-        public string $requirementKey,
-        public string $source,
-    ) {}
-}
+
+\class_alias('Splicewire\\Knowledge\\Determination\\Resolution\\Gap', 'Splicewire\\Knowledge\\Compliance\\Resolution\\Gap');

@@ -2,17 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance\Provenance;
 
-/**
- * The trust tier of a subject facet — how the value was obtained. The engine
- * qualifies its output by the *weakest* input that drove a conclusion: a result
- * resting on a merely declared fact is only as defensible as that declaration.
- * See schema §6.1 / §6.4.
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
  *
- * Ranked so the "floor" of a set is its lowest tier.
+ * The real declaration now lives at src/Determination/Provenance/ProvenanceTier.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
+ *
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-enum ProvenanceTier: int
-{
-    case Declared = 1;
-    case Derived = 2;
-    case Verified = 3;
-}
+
+\class_alias('Splicewire\\Knowledge\\Determination\\Provenance\\ProvenanceTier', 'Splicewire\\Knowledge\\Compliance\\Provenance\\ProvenanceTier');

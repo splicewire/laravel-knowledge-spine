@@ -2,42 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance\Concept;
 
-use Carbon\CarbonImmutable;
-use Spatie\LaravelData\Data;
-use Splicewire\Knowledge\Compliance\Concerns\HasBitemporalValidity;
-use Splicewire\Knowledge\Compliance\SourceRef;
-
-/**
- * An authority-sourced, bitemporal regulatory status for a concept in a
- * jurisdiction — "this substance has this classification per this authority, in
- * force over this window, learned by us at this time." The same two-axis design
- * as a rule fragment, now on the concept side: it answers "was this substance
- * scheduled on the date the merchant processed that transaction?" See the
- * ingredient ontology §4.
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
  *
- * Jurisdiction is not optional — federal and state schedules diverge, so status
- * resolution threads the subject's geography the way rule resolution does. The
- * status states the regulatory *fact with a source*; it never decides legality.
+ * The real declaration now lives at src/Determination/Concept/ConceptStatus.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
+ *
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-class ConceptStatus extends Data
-{
-    use HasBitemporalValidity;
 
-    public function __construct(
-        public string $conceptId,
-        public string $jurisdiction,
-        public string $authority,
-        public string $classification,
-        public ?CarbonImmutable $effectiveStart = null,
-        public ?CarbonImmutable $effectiveEnd = null,
-        public ?CarbonImmutable $ingestedAt = null,
-        public ?CarbonImmutable $knownUntil = null,
-        public ?string $supersedes = null,
-        public ?string $source = null,
-        public ?string $sourceUrl = null,
-        public ?string $changeNote = null,
-        public StatusState $status = StatusState::Active,
-        public ?string $statusId = null,
-        public SourceRef $sourceRef = new SourceRef,
-    ) {}
-}
+\class_alias('Splicewire\\Knowledge\\Determination\\Concept\\ConceptStatus', 'Splicewire\\Knowledge\\Compliance\\Concept\\ConceptStatus');

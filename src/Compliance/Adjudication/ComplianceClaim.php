@@ -2,43 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance\Adjudication;
 
-use Spatie\LaravelData\Data;
-
-/**
- * An asserted compliance claim, addressable on its own: a subject asserts a
- * `value` on a `dimension` (the resolver's `requirement_key`), to be judged
- * against the requirement that resolves on that dimension under a named
- * comparison `operator`.
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
  *
- * This is the compliance specialization of the kernel {@see
- * \Splicewire\Knowledge\Adjudication\Assertion}: the kernel `Assertion`
- * enumerates anonymous facets; a `ComplianceClaim` additionally names *which
- * resolved requirement it is checked against* and *how*. The vocabulary stays
- * engine-level — `dimension` is a free requirement-key string, `operator` is a
- * predicate leaf op — so the host (label/ad copy → claims) names the merchant
- * words, never the engine.
+ * The real declaration now lives at src/Determination/Adjudication/ComplianceClaim.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
  *
- * Carrying the operator on the claim (rather than inferring it) keeps the
- * adjudicator a pure comparator: "is the asserted value consistent with what the
- * rule requires, under this relation?" A permissibility check is typically
- * `eq`/`in`; a numeric tolerance is `lte`/`gte` (used by the substantiation axis).
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-class ComplianceClaim extends Data
-{
-    public function __construct(
-        /** The asserted facet id, used as the verdict dimension and citation handle. */
-        public string $facetPath,
 
-        /** The asserted value the merchant claims. */
-        public mixed $value,
-
-        /** The resolver requirement_key this claim is judged against. */
-        public string $requirementKey,
-
-        /** The predicate leaf op the asserted value is compared to the requirement under. */
-        public string $operator = 'eq',
-
-        /** Optional trust rank of the assertion itself (higher is stronger); null when unqualified. */
-        public ?int $provenance = null,
-    ) {}
-}
+\class_alias('Splicewire\\Knowledge\\Determination\\Adjudication\\ComplianceClaim', 'Splicewire\\Knowledge\\Compliance\\Adjudication\\ComplianceClaim');

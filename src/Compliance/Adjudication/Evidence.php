@@ -2,35 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance\Adjudication;
 
-use Spatie\LaravelData\Data;
-
-/**
- * A provenance-bearing value or attestation bound to a specific claim — the thing
- * the "can you prove it" axis evaluates against.
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
  *
- * Engine vocabulary only: an `Evidence` item is a measured `value` (a numeric COA
- * result, a boolean attestation) cited by a `reference`, carrying a `provenance`
- * trust rank (higher is stronger). The *host* names what it is — a lab COA, a
- * supplier attestation, a country-of-origin doc — and supplies the rank from its
- * own `ProvenanceTier`; the engine never names those.
+ * The real declaration now lives at src/Determination/Adjudication/Evidence.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
  *
- * `boundTo` is the `facetPath` of the {@see ComplianceClaim} this evidence
- * substantiates, so a claim can be bound to several evidence items and the
- * strongest available one drives the verdict's provenance floor.
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-class Evidence extends Data
-{
-    public function __construct(
-        /** The claim facetPath this evidence is bound to. */
-        public string $boundTo,
 
-        /** The measured / attested value the evidence carries. */
-        public mixed $value,
-
-        /** Citation handle for the evidence item (e.g. a COA id). */
-        public string $reference,
-
-        /** Trust rank of the evidence (higher is stronger); maps a host ProvenanceTier. */
-        public ?int $provenance = null,
-    ) {}
-}
+\class_alias('Splicewire\\Knowledge\\Determination\\Adjudication\\Evidence', 'Splicewire\\Knowledge\\Compliance\\Adjudication\\Evidence');

@@ -2,28 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance\Change;
 
-/**
- * What changed about a rule — the global, subject-independent axis. Pairs with
- * a {@see TemporalDirection} (when it bites) to derive a per-subject
- * {@see Disposition}. See schema §5.1.
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
+ *
+ * The real declaration now lives at src/Determination/Change/ChangeSubstance.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
+ *
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-enum ChangeSubstance: string
-{
-    case NewObligation = 'new_obligation';
-    case Tightened = 'tightened';
-    case Relaxed = 'relaxed';
 
-    /** Body unchanged, predicate now matches more subjects — the dangerous-quiet one. */
-    case ScopeExpanded = 'scope_expanded';
-    case ScopeContracted = 'scope_contracted';
-
-    case Clarification = 'clarification';
-
-    /** A defined term/threshold changed; ripples into every rule referencing it. */
-    case Redefinition = 'redefinition';
-
-    case Withdrawn = 'withdrawn';
-
-    /** The corpus had it wrong; a knowledge-axis fix, not a real-world change. */
-    case Correction = 'correction';
-}
+\class_alias('Splicewire\\Knowledge\\Determination\\Change\\ChangeSubstance', 'Splicewire\\Knowledge\\Compliance\\Change\\ChangeSubstance');

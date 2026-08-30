@@ -2,18 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance\Resolution;
 
-use Spatie\LaravelData\Data;
-
-/**
- * Names a fragment that contributed to a resolved requirement. Provenance is
- * what makes the engine explainable rather than an oracle — it powers the
- * "here's the rule, confirm with counsel" framing. See schema §3.
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
+ *
+ * The real declaration now lives at src/Determination/Resolution/Provenance.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
+ *
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-class Provenance extends Data
-{
-    public function __construct(
-        public string $ruleKey,
-        public string $source,
-        public int $precedenceTier,
-    ) {}
-}
+
+\class_alias('Splicewire\\Knowledge\\Determination\\Resolution\\Provenance', 'Splicewire\\Knowledge\\Compliance\\Resolution\\Provenance');

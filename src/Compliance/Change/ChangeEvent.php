@@ -2,28 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance\Change;
 
-use Spatie\LaravelData\Data;
-use Splicewire\Knowledge\Compliance\Data\Rule;
-
-/**
- * A transition between two states of the corpus: an old rule superseded by a
- * new one. `oldRule` is null for a NEW_OBLIGATION; `newRule` is null for a
- * WITHDRAWN. `substance` and `direction` are declared (they come from the
- * bulletin or reconciliation); the per-subject {@see Disposition} is derived
- * from them, never trusted from a self-label. See schema §5.
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
+ *
+ * The real declaration now lives at src/Determination/Change/ChangeEvent.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
+ *
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-class ChangeEvent extends Data
-{
-    public function __construct(
-        public ChangeSubstance $substance,
-        public TemporalDirection $direction,
-        public ?Rule $oldRule = null,
-        public ?Rule $newRule = null,
-    ) {}
 
-    /** The requirement_key this change touches, whichever side of the transition exists. */
-    public function requirementKey(): ?string
-    {
-        return $this->newRule?->requirementKey ?? $this->oldRule?->requirementKey;
-    }
-}
+\class_alias('Splicewire\\Knowledge\\Determination\\Change\\ChangeEvent', 'Splicewire\\Knowledge\\Compliance\\Change\\ChangeEvent');

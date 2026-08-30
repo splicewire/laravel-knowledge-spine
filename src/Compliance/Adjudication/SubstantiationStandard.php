@@ -2,32 +2,20 @@
 
 namespace Splicewire\Knowledge\Compliance\Adjudication;
 
-use Spatie\LaravelData\Data;
-
-/**
- * The governing standard a claim's bound evidence is checked against — the
- * "prove it" reference. It pairs a `limit` (the spec value evidence must satisfy)
- * with the predicate leaf `operator` the measured evidence value is compared to
- * the limit under (`gte` for a purity floor, `lte` for an impurity ceiling, `eq`
- * for an attested match).
+/*
+ * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
  *
- * Authored host-side per claim; the engine only compares. `claimFacet` is the
- * {@see ComplianceClaim} facetPath the standard governs, so the
- * {@see SubstantiationCheck} can find the standard for a claim.
+ * The real declaration now lives at src/Determination/Adjudication/SubstantiationStandard.php. This file keeps the OLD
+ * name resolving for consumers whose call sites have not migrated yet -- the same
+ * expand seam as T1, with the alias direction flipped at the moment of the move.
+ *
+ * String literals on both ends deliberately: pint's fully_qualified_strict_types
+ * rewrites a `\Fully\Qualified::class` argument into a `use` import plus a bare short
+ * name identical to the symbol this file defines, which is one edit from a
+ * relative-resolution bug. Verified in tower, which ships no pint.json.
+ *
+ * class_alias() covers classes, interfaces, enums AND traits (verified on PHP 8.4),
+ * so there is no special case here.
  */
-class SubstantiationStandard extends Data
-{
-    public function __construct(
-        /** The claim facetPath this standard governs. */
-        public string $claimFacet,
 
-        /** The spec value the evidence must satisfy. */
-        public mixed $limit,
-
-        /** The predicate leaf op the measured value is compared to the limit under. */
-        public string $operator = 'gte',
-
-        /** Citation handle for the standard (e.g. the controlling spec/rule id). */
-        public ?string $reference = null,
-    ) {}
-}
+\class_alias('Splicewire\\Knowledge\\Determination\\Adjudication\\SubstantiationStandard', 'Splicewire\\Knowledge\\Compliance\\Adjudication\\SubstantiationStandard');
