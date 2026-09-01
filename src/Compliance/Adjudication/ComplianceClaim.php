@@ -5,7 +5,7 @@ namespace Splicewire\Knowledge\Compliance\Adjudication;
 /*
  * Compliance -> Determination REVERSE stub (T2/B1). Deleted in T7 (contract).
  *
- * The real declaration now lives at src/Determination/Adjudication/ComplianceClaim.php. This file keeps the OLD
+ * The real declaration now lives at src/Determination/Adjudication/DeterminationClaim.php (renamed from ComplianceClaim in S2). This file keeps the OLD
  * name resolving for consumers whose call sites have not migrated yet -- the same
  * expand seam as T1, with the alias direction flipped at the moment of the move.
  *
@@ -18,4 +18,4 @@ namespace Splicewire\Knowledge\Compliance\Adjudication;
  * so there is no special case here.
  */
 
-\class_alias('Splicewire\\Knowledge\\Determination\\Adjudication\\ComplianceClaim', 'Splicewire\\Knowledge\\Compliance\\Adjudication\\ComplianceClaim');
+\class_alias('Splicewire\\Knowledge\\Determination\\Adjudication\\DeterminationClaim', 'Splicewire\\Knowledge\\Compliance\\Adjudication\\ComplianceClaim');

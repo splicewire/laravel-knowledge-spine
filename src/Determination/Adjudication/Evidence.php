@@ -14,7 +14,7 @@ use Spatie\LaravelData\Data;
  * supplier attestation, a country-of-origin doc — and supplies the rank from its
  * own `ProvenanceTier`; the engine never names those.
  *
- * `boundTo` is the `facetPath` of the {@see ComplianceClaim} this evidence
+ * `boundTo` is the `facetPath` of the {@see DeterminationClaim} this evidence
  * substantiates, so a claim can be bound to several evidence items and the
  * strongest available one drives the verdict's provenance floor.
  */

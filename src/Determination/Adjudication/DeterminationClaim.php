@@ -12,7 +12,7 @@ use Spatie\LaravelData\Data;
  *
  * This is the compliance specialization of the kernel {@see
  * \Splicewire\Knowledge\Adjudication\Assertion}: the kernel `Assertion`
- * enumerates anonymous facets; a `ComplianceClaim` additionally names *which
+ * enumerates anonymous facets; a `DeterminationClaim` additionally names *which
  * resolved requirement it is checked against* and *how*. The vocabulary stays
  * engine-level — `dimension` is a free requirement-key string, `operator` is a
  * predicate leaf op — so the host (label/ad copy → claims) names the merchant
@@ -23,7 +23,7 @@ use Spatie\LaravelData\Data;
  * rule requires, under this relation?" A permissibility check is typically
  * `eq`/`in`; a numeric tolerance is `lte`/`gte` (used by the substantiation axis).
  */
-class ComplianceClaim extends Data
+class DeterminationClaim extends Data
 {
     public function __construct(
         /** The asserted facet id, used as the verdict dimension and citation handle. */

@@ -12,7 +12,7 @@ use Spatie\LaravelData\Data;
  * for an attested match).
  *
  * Authored host-side per claim; the engine only compares. `claimFacet` is the
- * {@see ComplianceClaim} facetPath the standard governs, so the
+ * {@see DeterminationClaim} facetPath the standard governs, so the
  * {@see SubstantiationCheck} can find the standard for a claim.
  */
 class SubstantiationStandard extends Data
