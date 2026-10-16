@@ -1,7 +1,7 @@
-# laravel-knowledge-spine-data — Context Map (spoke)
+# laravel-knowledge-spine — Context Map (spoke)
 
 The satellite-facing DTO half of the knowledge engine (`Assertion`/`Verdict`/`Determination`/
-`CanonFact`/`ComplianceClaim`). Layering + shared seam rules: `splicewire-app/CONTEXT-MAP.md`.
+`CanonFact` — `ComplianceClaim` retired in the determination rename). Layering + shared seam rules: `splicewire-app/CONTEXT-MAP.md`.
 
 ## The seam this file exists to record
 
